@@ -1,0 +1,48 @@
+=== P011 T010 automated evaluation ===
+dialogues: 12, gold constraints: 71
+retention correct-section: 59/71 = 83.1%
+retention any-section:     70/71 = 98.6%
+control summary retention: 3/71 = 4.2%
+candidates: 94, false positives (non-gold): 24, of which decisions: 3
+JSON round-trip ok: 12/12; 7-section Markdown: 12/12; unconfirmed items in exports: 0
+perf 20000 chars: extract median 0.9 ms (min 0.7, max 1.1), segment median 0.3 ms, 10 items
+D01 [明确决策与禁止事项] gold 7/7 correct-section, 7/7 any-section, control 0/7, cand 10 (FP 3, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+  D01 FP [facts] 助手：明白了，记账页面先做，统计页面后做。
+  D01 FP [openQuestions] 助手：可以的，先确认几个关键点：数据存在本地还是云端？
+  D01 FP [openQuestions] 用什么技术？
+D02 [事实和建议混杂] gold 3/5 correct-section, 5/5 any-section, control 1/5, cand 9 (FP 4, decFP 0), missed [-], wrong-section [D02-C3,D02-C4], roundtrip ok, md7 true
+  D02 FP [facts] 助手：建议用图表展示数据，这样读者更容易理解。
+  D02 FP [facts] 助手：建议每天固定时间写作，比如早上九点到十一点。
+  D02 FP [facts] 还没想好。
+  D02 FP [facts] 助手：可以考虑加，但不是必须的。
+D03 [前后修改决策] gold 5/5 correct-section, 5/5 any-section, control 0/5, cand 8 (FP 3, decFP 2), missed [-], wrong-section [-], roundtrip ok, md7 true
+  D03 superseded decisions extracted as candidates: 决定用 MySQL | 决定用深色主题
+  D03 FP [facts] 助手：MySQL 没问题，但本地博客用轻量数据库也行。
+  D03 FP [decisions] 用户：最开始我决定用 MySQL 存文章数据。
+  D03 FP [decisions] 用户：主题一开始决定用深色主题。
+D04 [多轮项目进度] gold 6/7 correct-section, 7/7 any-section, control 0/7, cand 7 (FP 0, decFP 0), missed [-], wrong-section [D04-C4], roundtrip ok, md7 true
+D05 [未解决问题] gold 5/7 correct-section, 7/7 any-section, control 0/7, cand 9 (FP 2, decFP 0), missed [-], wrong-section [D05-C1,D05-C3], roundtrip ok, md7 true
+  D05 FP [facts] 还没有定。
+  D05 FP [openQuestions] 待确认。
+D06 [包含敏感信息] gold 4/5 correct-section, 4/5 any-section, control 0/5, cand 11 (FP 7, decFP 0), missed [D06-C4], wrong-section [-], roundtrip ok, md7 true
+  D06 sensitive in candidates: Test1234!; in export: none; hints: [{"kind":"email","snippet":"test@example.com"}]
+  D06 FP [facts] 用户：测试账号是 test@example.
+  D06 FP [facts] com，密码是 Test1234!
+  D06 FP [facts] ，只在测试环境用。
+  D06 FP [facts] 用户：服务器地址是 192.
+  D06 FP [facts] 168.
+  D06 FP [facts] 1.
+  D06 FP [facts] 100，端口 8080。
+D07 [缺少某些栏目] gold 3/4 correct-section, 4/4 any-section, control 0/4, cand 5 (FP 0, decFP 0), missed [-], wrong-section [D07-C4], roundtrip ok, md7 true
+  D07 duplicate-phrase candidates: ["按日期排序 x2"]
+D08 [冗余长文本] gold 4/5 correct-section, 5/5 any-section, control 0/5, cand 7 (FP 2, decFP 0), missed [-], wrong-section [D08-C2], roundtrip ok, md7 true
+  D08 FP [facts] 用户：本季度完成了三个项目，这一点要重点写。
+  D08 FP [progress] 用户：官网改版已经完成，这一点很重要。
+D09 [目标信号回归（FINDING-T009-01 区域）] gold 6/6 correct-section, 6/6 any-section, control 0/6, cand 6 (FP 0, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+D10 [混合长会话] gold 7/7 correct-section, 7/7 any-section, control 0/7, cand 9 (FP 2, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+  D10 FP [facts] 助手：两百人同时报名没问题，关键是报名成功后要发确认短信。
+  D10 FP [facts] 还在等财务确认。
+D11 [数字约束] gold 5/7 correct-section, 7/7 any-section, control 1/7, cand 6 (FP 0, decFP 0), missed [-], wrong-section [D11-C1,D11-C7], roundtrip ok, md7 true
+D12 [显式冲突与否定] gold 4/6 correct-section, 6/6 any-section, control 1/6, cand 7 (FP 1, decFP 1), missed [-], wrong-section [D12-C4,D12-C5], roundtrip ok, md7 true
+  D12 FP [decisions] 还没决定。
+results written to evaluation/results.json

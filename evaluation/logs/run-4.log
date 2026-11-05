@@ -1,0 +1,43 @@
+=== P011 T010 automated evaluation ===
+dialogues: 12, gold constraints: 71
+retention correct-section: 71/71 = 100.0%
+retention any-section:     71/71 = 100.0%
+control summary retention (manual adjudication): 62/71 = 87.3% (substring diagnostic would say 3/71 — invalid for paraphrase, see report)
+candidates: 89, false positives (non-gold): 18, of which decisions: 2
+JSON round-trip ok: 12/12; 7-section Markdown: 12/12; unconfirmed items in exports: 0
+perf 20000 chars: extract median 2.2 ms (min 2.1, max 3.7), segment median 1.1 ms, 10 items
+D01 [明确决策与禁止事项] gold 7/7 correct-section, 7/7 any-section, control 5/7, cand 10 (FP 3, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+  D01 FP [facts] 助手：明白了，记账页面先做，统计页面后做。
+  D01 FP [openQuestions] 助手：可以的，先确认几个关键点：数据存在本地还是云端？
+  D01 FP [openQuestions] 用什么技术？
+D02 [事实和建议混杂] gold 5/5 correct-section, 5/5 any-section, control 4/5, cand 9 (FP 4, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+  D02 FP [facts] 助手：建议用图表展示数据，这样读者更容易理解。
+  D02 FP [facts] 助手：建议每天固定时间写作，比如早上九点到十一点。
+  D02 FP [facts] 助手：可以考虑加，但不是必须的。
+  D02 FP [openQuestions] 还没想好。
+D03 [前后修改决策] gold 5/5 correct-section, 5/5 any-section, control 5/5, cand 8 (FP 3, decFP 2), missed [-], wrong-section [-], roundtrip ok, md7 true
+  D03 conflicts flagged: 2 — 决策变更：候选「用户：后来我改主意了，决定改用 SQLite，这样部署简单。」（decisions）明确表示改换了决定，但内容上无法确定它取代了哪一项较早决策（没有较早决策与它共享主题词），请人工检查后确认哪一项仍然有效，不要自动以最后一句为准，也不要按最近的一条猜测。 || 决策变更：候选「用户：后来觉得深色看久了累，决定改回浅色主题。」（decisions）明确表示改换了决定，可能取代了较早的候选「用户：主题一开始决定用深色主题。」（decisions），请人工检查后确认哪一项仍然有效，不要自动以最后一句为准。
+  D03 superseded decisions extracted as candidates: 决定用 MySQL | 决定用深色主题
+  D03 FP [facts] 助手：MySQL 没问题，但本地博客用轻量数据库也行。
+  D03 FP [decisions] 用户：最开始我决定用 MySQL 存文章数据。
+  D03 FP [decisions] 用户：主题一开始决定用深色主题。
+D04 [多轮项目进度] gold 7/7 correct-section, 7/7 any-section, control 6/7, cand 7 (FP 0, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+D05 [未解决问题] gold 7/7 correct-section, 7/7 any-section, control 7/7, cand 9 (FP 2, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+  D05 FP [openQuestions] 还没有定。
+  D05 FP [openQuestions] 待确认。
+D06 [包含敏感信息] gold 5/5 correct-section, 5/5 any-section, control 4/5, cand 6 (FP 1, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+  D06 sensitive in candidates: test@example.com | Test1234!; in export: none; hints: [{"kind":"email","snippet":"test@example.com"}]
+  D06 FP [facts] 用户：测试账号是 test@example.com，密码是 Test1234!，只在测试环境用。
+D07 [缺少某些栏目] gold 4/4 correct-section, 4/4 any-section, control 4/4, cand 5 (FP 0, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+  D07 duplicate-phrase candidates: ["按日期排序 x2"]
+D08 [冗余长文本] gold 5/5 correct-section, 5/5 any-section, control 5/5, cand 7 (FP 2, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+  D08 FP [progress] 用户：官网改版已经完成，这一点很重要。
+  D08 FP [progress] 用户：本季度完成了三个项目，这一点要重点写。
+D09 [目标信号回归（FINDING-T009-01 区域）] gold 6/6 correct-section, 6/6 any-section, control 5/6, cand 6 (FP 0, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+D10 [混合长会话] gold 7/7 correct-section, 7/7 any-section, control 5/7, cand 9 (FP 2, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+  D10 FP [facts] 助手：两百人同时报名没问题，关键是报名成功后要发确认短信。
+  D10 FP [facts] 还在等财务确认。
+D11 [数字约束] gold 7/7 correct-section, 7/7 any-section, control 6/7, cand 6 (FP 0, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+D12 [显式冲突与否定] gold 6/6 correct-section, 6/6 any-section, control 6/6, cand 7 (FP 1, decFP 0), missed [-], wrong-section [-], roundtrip ok, md7 true
+  D12 FP [openQuestions] 还没决定。
+results written to evaluation/results.json

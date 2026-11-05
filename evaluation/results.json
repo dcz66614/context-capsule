@@ -1,0 +1,830 @@
+{
+  "generatedAt": "2026-11-05T07:47:34.015Z",
+  "goldFrozenAt": "2026-11-05T07:19:00Z",
+  "totals": {
+    "dialogues": 12,
+    "goldTotal": 71,
+    "goldRetainedCorrectSection": 71,
+    "goldRetainedAnySection": 71,
+    "candidates": 89,
+    "falsePositives": 18,
+    "decisionFalsePositives": 2,
+    "jsonRoundTripOk": 12,
+    "markdownSevenSections": 12,
+    "unconfirmedInExports": 0,
+    "controlRetained": 62,
+    "perf": {
+      "chars": 20000,
+      "extractMsMedian": 2.337137000000098,
+      "extractMsMin": 1.100131000000033,
+      "extractMsMax": 5.382106999999905,
+      "segmentMsMedian": 0.5155129999999417,
+      "itemsExtracted": 10,
+      "runs": 5
+    }
+  },
+  "results": [
+    {
+      "id": "D01",
+      "coverage": "明确决策与禁止事项",
+      "chars": 257,
+      "candidates": 10,
+      "candidatesBySection": {
+        "goal": 1,
+        "facts": 2,
+        "decisions": 2,
+        "openQuestions": 2,
+        "prohibitions": 2,
+        "progress": 0,
+        "nextSteps": 1
+      },
+      "confirmed": 7,
+      "rejected": 3,
+      "goldTotal": 7,
+      "goldRetainedCorrectSection": 7,
+      "goldRetainedAnySection": 7,
+      "goldMissed": [],
+      "goldWrongSection": [],
+      "falsePositives": [
+        {
+          "section": "facts",
+          "text": "助手：明白了，记账页面先做，统计页面后做。"
+        },
+        {
+          "section": "openQuestions",
+          "text": "助手：可以的，先确认几个关键点：数据存在本地还是云端？"
+        },
+        {
+          "section": "openQuestions",
+          "text": "用什么技术？"
+        }
+      ],
+      "decisionFalsePositives": [],
+      "supersededExtracted": [],
+      "sensitiveInCandidates": [],
+      "sensitiveInExport": [],
+      "sensitiveHints": [],
+      "jsonRoundTripOk": true,
+      "jsonRoundTripDetail": "ok",
+      "markdownSevenSections": true,
+      "markdownHeadingsFound": [
+        "goal",
+        "facts",
+        "decisions",
+        "openQuestions",
+        "prohibitions",
+        "progress",
+        "nextSteps"
+      ],
+      "unconfirmedInMarkdown": [],
+      "unconfirmedInJson": 0,
+      "exportedItems": 7,
+      "controlRetained": 5,
+      "controlMissed": [
+        "D01-C4",
+        "D01-C5"
+      ],
+      "controlSubstringRetained": 0,
+      "controlSubstringMissed": [
+        "D01-C1",
+        "D01-C2",
+        "D01-C3",
+        "D01-C4",
+        "D01-C5",
+        "D01-C6",
+        "D01-C7"
+      ],
+      "conflicts": [],
+      "duplicatePhraseCandidates": []
+    },
+    {
+      "id": "D02",
+      "coverage": "事实和建议混杂",
+      "chars": 190,
+      "candidates": 9,
+      "candidatesBySection": {
+        "goal": 1,
+        "facts": 4,
+        "decisions": 0,
+        "openQuestions": 2,
+        "prohibitions": 0,
+        "progress": 1,
+        "nextSteps": 1
+      },
+      "confirmed": 5,
+      "rejected": 4,
+      "goldTotal": 5,
+      "goldRetainedCorrectSection": 5,
+      "goldRetainedAnySection": 5,
+      "goldMissed": [],
+      "goldWrongSection": [],
+      "falsePositives": [
+        {
+          "section": "facts",
+          "text": "助手：建议用图表展示数据，这样读者更容易理解。"
+        },
+        {
+          "section": "facts",
+          "text": "助手：建议每天固定时间写作，比如早上九点到十一点。"
+        },
+        {
+          "section": "facts",
+          "text": "助手：可以考虑加，但不是必须的。"
+        },
+        {
+          "section": "openQuestions",
+          "text": "还没想好。"
+        }
+      ],
+      "decisionFalsePositives": [],
+      "supersededExtracted": [],
+      "sensitiveInCandidates": [],
+      "sensitiveInExport": [],
+      "sensitiveHints": [],
+      "jsonRoundTripOk": true,
+      "jsonRoundTripDetail": "ok",
+      "markdownSevenSections": true,
+      "markdownHeadingsFound": [
+        "goal",
+        "facts",
+        "decisions",
+        "openQuestions",
+        "prohibitions",
+        "progress",
+        "nextSteps"
+      ],
+      "unconfirmedInMarkdown": [],
+      "unconfirmedInJson": 0,
+      "exportedItems": 5,
+      "controlRetained": 4,
+      "controlMissed": [
+        "D02-C2"
+      ],
+      "controlSubstringRetained": 1,
+      "controlSubstringMissed": [
+        "D02-C1",
+        "D02-C2",
+        "D02-C4",
+        "D02-C5"
+      ],
+      "conflicts": [],
+      "duplicatePhraseCandidates": []
+    },
+    {
+      "id": "D03",
+      "coverage": "前后修改决策",
+      "chars": 202,
+      "candidates": 8,
+      "candidatesBySection": {
+        "goal": 1,
+        "facts": 1,
+        "decisions": 4,
+        "openQuestions": 0,
+        "prohibitions": 1,
+        "progress": 0,
+        "nextSteps": 1
+      },
+      "confirmed": 5,
+      "rejected": 3,
+      "goldTotal": 5,
+      "goldRetainedCorrectSection": 5,
+      "goldRetainedAnySection": 5,
+      "goldMissed": [],
+      "goldWrongSection": [],
+      "falsePositives": [
+        {
+          "section": "facts",
+          "text": "助手：MySQL 没问题，但本地博客用轻量数据库也行。"
+        },
+        {
+          "section": "decisions",
+          "text": "用户：最开始我决定用 MySQL 存文章数据。"
+        },
+        {
+          "section": "decisions",
+          "text": "用户：主题一开始决定用深色主题。"
+        }
+      ],
+      "decisionFalsePositives": [
+        {
+          "section": "decisions",
+          "text": "用户：最开始我决定用 MySQL 存文章数据。"
+        },
+        {
+          "section": "decisions",
+          "text": "用户：主题一开始决定用深色主题。"
+        }
+      ],
+      "supersededExtracted": [
+        "决定用 MySQL",
+        "决定用深色主题"
+      ],
+      "sensitiveInCandidates": [],
+      "sensitiveInExport": [],
+      "sensitiveHints": [],
+      "jsonRoundTripOk": true,
+      "jsonRoundTripDetail": "ok",
+      "markdownSevenSections": true,
+      "markdownHeadingsFound": [
+        "goal",
+        "facts",
+        "decisions",
+        "openQuestions",
+        "prohibitions",
+        "progress",
+        "nextSteps"
+      ],
+      "unconfirmedInMarkdown": [],
+      "unconfirmedInJson": 0,
+      "exportedItems": 5,
+      "controlRetained": 5,
+      "controlMissed": [],
+      "controlSubstringRetained": 0,
+      "controlSubstringMissed": [
+        "D03-C1",
+        "D03-C2",
+        "D03-C3",
+        "D03-C4",
+        "D03-C5"
+      ],
+      "conflicts": [
+        {
+          "id": "conflict-extracted-3-extracted-3",
+          "reason": "决策变更：候选「用户：后来我改主意了，决定改用 SQLite，这样部署简单。」（decisions）明确表示改换了决定，但内容上无法确定它取代了哪一项较早决策（没有较早决策与它共享主题词），请人工检查后确认哪一项仍然有效，不要自动以最后一句为准，也不要按最近的一条猜测。"
+        },
+        {
+          "id": "conflict-extracted-4-extracted-5",
+          "reason": "决策变更：候选「用户：后来觉得深色看久了累，决定改回浅色主题。」（decisions）明确表示改换了决定，可能取代了较早的候选「用户：主题一开始决定用深色主题。」（decisions），请人工检查后确认哪一项仍然有效，不要自动以最后一句为准。"
+        }
+      ],
+      "duplicatePhraseCandidates": []
+    },
+    {
+      "id": "D04",
+      "coverage": "多轮项目进度",
+      "chars": 166,
+      "candidates": 7,
+      "candidatesBySection": {
+        "goal": 1,
+        "facts": 0,
+        "decisions": 1,
+        "openQuestions": 0,
+        "prohibitions": 1,
+        "progress": 3,
+        "nextSteps": 1
+      },
+      "confirmed": 7,
+      "rejected": 0,
+      "goldTotal": 7,
+      "goldRetainedCorrectSection": 7,
+      "goldRetainedAnySection": 7,
+      "goldMissed": [],
+      "goldWrongSection": [],
+      "falsePositives": [],
+      "decisionFalsePositives": [],
+      "supersededExtracted": [],
+      "sensitiveInCandidates": [],
+      "sensitiveInExport": [],
+      "sensitiveHints": [],
+      "jsonRoundTripOk": true,
+      "jsonRoundTripDetail": "ok",
+      "markdownSevenSections": true,
+      "markdownHeadingsFound": [
+        "goal",
+        "facts",
+        "decisions",
+        "openQuestions",
+        "prohibitions",
+        "progress",
+        "nextSteps"
+      ],
+      "unconfirmedInMarkdown": [],
+      "unconfirmedInJson": 0,
+      "exportedItems": 7,
+      "controlRetained": 6,
+      "controlMissed": [
+        "D04-C6"
+      ],
+      "controlSubstringRetained": 0,
+      "controlSubstringMissed": [
+        "D04-C1",
+        "D04-C2",
+        "D04-C3",
+        "D04-C4",
+        "D04-C5",
+        "D04-C6",
+        "D04-C7"
+      ],
+      "conflicts": [],
+      "duplicatePhraseCandidates": []
+    },
+    {
+      "id": "D05",
+      "coverage": "未解决问题",
+      "chars": 159,
+      "candidates": 9,
+      "candidatesBySection": {
+        "goal": 1,
+        "facts": 1,
+        "decisions": 0,
+        "openQuestions": 5,
+        "prohibitions": 1,
+        "progress": 0,
+        "nextSteps": 1
+      },
+      "confirmed": 7,
+      "rejected": 2,
+      "goldTotal": 7,
+      "goldRetainedCorrectSection": 7,
+      "goldRetainedAnySection": 7,
+      "goldMissed": [],
+      "goldWrongSection": [],
+      "falsePositives": [
+        {
+          "section": "openQuestions",
+          "text": "还没有定。"
+        },
+        {
+          "section": "openQuestions",
+          "text": "待确认。"
+        }
+      ],
+      "decisionFalsePositives": [],
+      "supersededExtracted": [],
+      "sensitiveInCandidates": [],
+      "sensitiveInExport": [],
+      "sensitiveHints": [],
+      "jsonRoundTripOk": true,
+      "jsonRoundTripDetail": "ok",
+      "markdownSevenSections": true,
+      "markdownHeadingsFound": [
+        "goal",
+        "facts",
+        "decisions",
+        "openQuestions",
+        "prohibitions",
+        "progress",
+        "nextSteps"
+      ],
+      "unconfirmedInMarkdown": [],
+      "unconfirmedInJson": 0,
+      "exportedItems": 7,
+      "controlRetained": 7,
+      "controlMissed": [],
+      "controlSubstringRetained": 0,
+      "controlSubstringMissed": [
+        "D05-C1",
+        "D05-C2",
+        "D05-C3",
+        "D05-C4",
+        "D05-C5",
+        "D05-C6",
+        "D05-C7"
+      ],
+      "conflicts": [],
+      "duplicatePhraseCandidates": []
+    },
+    {
+      "id": "D06",
+      "coverage": "包含敏感信息",
+      "chars": 184,
+      "candidates": 6,
+      "candidatesBySection": {
+        "goal": 1,
+        "facts": 2,
+        "decisions": 1,
+        "openQuestions": 0,
+        "prohibitions": 1,
+        "progress": 0,
+        "nextSteps": 1
+      },
+      "confirmed": 5,
+      "rejected": 1,
+      "goldTotal": 5,
+      "goldRetainedCorrectSection": 5,
+      "goldRetainedAnySection": 5,
+      "goldMissed": [],
+      "goldWrongSection": [],
+      "falsePositives": [
+        {
+          "section": "facts",
+          "text": "用户：测试账号是 test@example.com，密码是 Test1234!，只在测试环境用。"
+        }
+      ],
+      "decisionFalsePositives": [],
+      "supersededExtracted": [],
+      "sensitiveInCandidates": [
+        "test@example.com",
+        "Test1234!"
+      ],
+      "sensitiveInExport": [],
+      "sensitiveHints": [
+        {
+          "kind": "email",
+          "snippet": "test@example.com"
+        }
+      ],
+      "jsonRoundTripOk": true,
+      "jsonRoundTripDetail": "ok",
+      "markdownSevenSections": true,
+      "markdownHeadingsFound": [
+        "goal",
+        "facts",
+        "decisions",
+        "openQuestions",
+        "prohibitions",
+        "progress",
+        "nextSteps"
+      ],
+      "unconfirmedInMarkdown": [],
+      "unconfirmedInJson": 0,
+      "exportedItems": 5,
+      "controlRetained": 4,
+      "controlMissed": [
+        "D06-C3"
+      ],
+      "controlSubstringRetained": 0,
+      "controlSubstringMissed": [
+        "D06-C1",
+        "D06-C2",
+        "D06-C3",
+        "D06-C4",
+        "D06-C5"
+      ],
+      "conflicts": [],
+      "duplicatePhraseCandidates": []
+    },
+    {
+      "id": "D07",
+      "coverage": "缺少某些栏目",
+      "chars": 107,
+      "candidates": 5,
+      "candidatesBySection": {
+        "goal": 1,
+        "facts": 3,
+        "decisions": 0,
+        "openQuestions": 1,
+        "prohibitions": 0,
+        "progress": 0,
+        "nextSteps": 0
+      },
+      "confirmed": 5,
+      "rejected": 0,
+      "goldTotal": 4,
+      "goldRetainedCorrectSection": 4,
+      "goldRetainedAnySection": 4,
+      "goldMissed": [],
+      "goldWrongSection": [],
+      "falsePositives": [],
+      "decisionFalsePositives": [],
+      "supersededExtracted": [],
+      "sensitiveInCandidates": [],
+      "sensitiveInExport": [],
+      "sensitiveHints": [],
+      "jsonRoundTripOk": true,
+      "jsonRoundTripDetail": "ok",
+      "markdownSevenSections": true,
+      "markdownHeadingsFound": [
+        "goal",
+        "facts",
+        "decisions",
+        "openQuestions",
+        "prohibitions",
+        "progress",
+        "nextSteps"
+      ],
+      "unconfirmedInMarkdown": [],
+      "unconfirmedInJson": 0,
+      "exportedItems": 5,
+      "controlRetained": 4,
+      "controlMissed": [],
+      "controlSubstringRetained": 0,
+      "controlSubstringMissed": [
+        "D07-C1",
+        "D07-C2",
+        "D07-C3",
+        "D07-C4"
+      ],
+      "conflicts": [],
+      "duplicatePhraseCandidates": [
+        {
+          "phrase": "按日期排序",
+          "count": 2,
+          "texts": [
+            "用户：相册里要按日期排序。",
+            "助手：按日期排序没问题，还可以加地点标签。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "D08",
+      "coverage": "冗余长文本",
+      "chars": 180,
+      "candidates": 7,
+      "candidatesBySection": {
+        "goal": 1,
+        "facts": 0,
+        "decisions": 0,
+        "openQuestions": 0,
+        "prohibitions": 1,
+        "progress": 4,
+        "nextSteps": 1
+      },
+      "confirmed": 5,
+      "rejected": 2,
+      "goldTotal": 5,
+      "goldRetainedCorrectSection": 5,
+      "goldRetainedAnySection": 5,
+      "goldMissed": [],
+      "goldWrongSection": [],
+      "falsePositives": [
+        {
+          "section": "progress",
+          "text": "用户：官网改版已经完成，这一点很重要。"
+        },
+        {
+          "section": "progress",
+          "text": "用户：本季度完成了三个项目，这一点要重点写。"
+        }
+      ],
+      "decisionFalsePositives": [],
+      "supersededExtracted": [],
+      "sensitiveInCandidates": [],
+      "sensitiveInExport": [],
+      "sensitiveHints": [],
+      "jsonRoundTripOk": true,
+      "jsonRoundTripDetail": "ok",
+      "markdownSevenSections": true,
+      "markdownHeadingsFound": [
+        "goal",
+        "facts",
+        "decisions",
+        "openQuestions",
+        "prohibitions",
+        "progress",
+        "nextSteps"
+      ],
+      "unconfirmedInMarkdown": [],
+      "unconfirmedInJson": 0,
+      "exportedItems": 5,
+      "controlRetained": 5,
+      "controlMissed": [],
+      "controlSubstringRetained": 0,
+      "controlSubstringMissed": [
+        "D08-C1",
+        "D08-C2",
+        "D08-C3",
+        "D08-C4",
+        "D08-C5"
+      ],
+      "conflicts": [],
+      "duplicatePhraseCandidates": []
+    },
+    {
+      "id": "D09",
+      "coverage": "目标信号回归（FINDING-T009-01 区域）",
+      "chars": 145,
+      "candidates": 6,
+      "candidatesBySection": {
+        "goal": 2,
+        "facts": 0,
+        "decisions": 1,
+        "openQuestions": 0,
+        "prohibitions": 1,
+        "progress": 1,
+        "nextSteps": 1
+      },
+      "confirmed": 6,
+      "rejected": 0,
+      "goldTotal": 6,
+      "goldRetainedCorrectSection": 6,
+      "goldRetainedAnySection": 6,
+      "goldMissed": [],
+      "goldWrongSection": [],
+      "falsePositives": [],
+      "decisionFalsePositives": [],
+      "supersededExtracted": [],
+      "sensitiveInCandidates": [],
+      "sensitiveInExport": [],
+      "sensitiveHints": [],
+      "jsonRoundTripOk": true,
+      "jsonRoundTripDetail": "ok",
+      "markdownSevenSections": true,
+      "markdownHeadingsFound": [
+        "goal",
+        "facts",
+        "decisions",
+        "openQuestions",
+        "prohibitions",
+        "progress",
+        "nextSteps"
+      ],
+      "unconfirmedInMarkdown": [],
+      "unconfirmedInJson": 0,
+      "exportedItems": 6,
+      "controlRetained": 5,
+      "controlMissed": [
+        "D09-C6"
+      ],
+      "controlSubstringRetained": 0,
+      "controlSubstringMissed": [
+        "D09-C1",
+        "D09-C2",
+        "D09-C3",
+        "D09-C4",
+        "D09-C5",
+        "D09-C6"
+      ],
+      "conflicts": [],
+      "duplicatePhraseCandidates": []
+    },
+    {
+      "id": "D10",
+      "coverage": "混合长会话",
+      "chars": 212,
+      "candidates": 9,
+      "candidatesBySection": {
+        "goal": 1,
+        "facts": 3,
+        "decisions": 1,
+        "openQuestions": 1,
+        "prohibitions": 1,
+        "progress": 1,
+        "nextSteps": 1
+      },
+      "confirmed": 7,
+      "rejected": 2,
+      "goldTotal": 7,
+      "goldRetainedCorrectSection": 7,
+      "goldRetainedAnySection": 7,
+      "goldMissed": [],
+      "goldWrongSection": [],
+      "falsePositives": [
+        {
+          "section": "facts",
+          "text": "助手：两百人同时报名没问题，关键是报名成功后要发确认短信。"
+        },
+        {
+          "section": "facts",
+          "text": "还在等财务确认。"
+        }
+      ],
+      "decisionFalsePositives": [],
+      "supersededExtracted": [],
+      "sensitiveInCandidates": [],
+      "sensitiveInExport": [],
+      "sensitiveHints": [],
+      "jsonRoundTripOk": true,
+      "jsonRoundTripDetail": "ok",
+      "markdownSevenSections": true,
+      "markdownHeadingsFound": [
+        "goal",
+        "facts",
+        "decisions",
+        "openQuestions",
+        "prohibitions",
+        "progress",
+        "nextSteps"
+      ],
+      "unconfirmedInMarkdown": [],
+      "unconfirmedInJson": 0,
+      "exportedItems": 7,
+      "controlRetained": 5,
+      "controlMissed": [
+        "D10-C4",
+        "D10-C7"
+      ],
+      "controlSubstringRetained": 0,
+      "controlSubstringMissed": [
+        "D10-C1",
+        "D10-C2",
+        "D10-C3",
+        "D10-C4",
+        "D10-C5",
+        "D10-C6",
+        "D10-C7"
+      ],
+      "conflicts": [],
+      "duplicatePhraseCandidates": []
+    },
+    {
+      "id": "D11",
+      "coverage": "数字约束",
+      "chars": 164,
+      "candidates": 6,
+      "candidatesBySection": {
+        "goal": 1,
+        "facts": 2,
+        "decisions": 1,
+        "openQuestions": 0,
+        "prohibitions": 1,
+        "progress": 0,
+        "nextSteps": 1
+      },
+      "confirmed": 6,
+      "rejected": 0,
+      "goldTotal": 7,
+      "goldRetainedCorrectSection": 7,
+      "goldRetainedAnySection": 7,
+      "goldMissed": [],
+      "goldWrongSection": [],
+      "falsePositives": [],
+      "decisionFalsePositives": [],
+      "supersededExtracted": [],
+      "sensitiveInCandidates": [],
+      "sensitiveInExport": [],
+      "sensitiveHints": [],
+      "jsonRoundTripOk": true,
+      "jsonRoundTripDetail": "ok",
+      "markdownSevenSections": true,
+      "markdownHeadingsFound": [
+        "goal",
+        "facts",
+        "decisions",
+        "openQuestions",
+        "prohibitions",
+        "progress",
+        "nextSteps"
+      ],
+      "unconfirmedInMarkdown": [],
+      "unconfirmedInJson": 0,
+      "exportedItems": 6,
+      "controlRetained": 6,
+      "controlMissed": [
+        "D11-C2"
+      ],
+      "controlSubstringRetained": 1,
+      "controlSubstringMissed": [
+        "D11-C1",
+        "D11-C2",
+        "D11-C3",
+        "D11-C4",
+        "D11-C5",
+        "D11-C7"
+      ],
+      "conflicts": [],
+      "duplicatePhraseCandidates": []
+    },
+    {
+      "id": "D12",
+      "coverage": "显式冲突与否定",
+      "chars": 137,
+      "candidates": 7,
+      "candidatesBySection": {
+        "goal": 1,
+        "facts": 0,
+        "decisions": 1,
+        "openQuestions": 2,
+        "prohibitions": 1,
+        "progress": 1,
+        "nextSteps": 1
+      },
+      "confirmed": 6,
+      "rejected": 1,
+      "goldTotal": 6,
+      "goldRetainedCorrectSection": 6,
+      "goldRetainedAnySection": 6,
+      "goldMissed": [],
+      "goldWrongSection": [],
+      "falsePositives": [
+        {
+          "section": "openQuestions",
+          "text": "还没决定。"
+        }
+      ],
+      "decisionFalsePositives": [],
+      "supersededExtracted": [],
+      "sensitiveInCandidates": [],
+      "sensitiveInExport": [],
+      "sensitiveHints": [],
+      "jsonRoundTripOk": true,
+      "jsonRoundTripDetail": "ok",
+      "markdownSevenSections": true,
+      "markdownHeadingsFound": [
+        "goal",
+        "facts",
+        "decisions",
+        "openQuestions",
+        "prohibitions",
+        "progress",
+        "nextSteps"
+      ],
+      "unconfirmedInMarkdown": [],
+      "unconfirmedInJson": 0,
+      "exportedItems": 6,
+      "controlRetained": 6,
+      "controlMissed": [],
+      "controlSubstringRetained": 1,
+      "controlSubstringMissed": [
+        "D12-C1",
+        "D12-C2",
+        "D12-C3",
+        "D12-C5",
+        "D12-C6"
+      ],
+      "conflicts": [],
+      "duplicatePhraseCandidates": []
+    }
+  ]
+}
